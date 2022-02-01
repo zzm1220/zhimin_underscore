@@ -1,0 +1,43 @@
+<!--
+ * @Author: zhimin
+ * @Date: 2022-01-25 10:38:41
+ * @LastEditors: zhimin
+ * @LastEditTime: 2022-01-25 11:04:13
+ * @FilePath: \zhimin_underscore\demo\tmp.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="container">
+  </div>
+  <script type="text/html" id="user_tmpl">
+    <%for(var i = 0;i<users.length;i++) {%>
+      <li>
+        <a href="<%=users[i].url%>">
+          <%=users[i].name%>
+        </a>
+      </li>
+    <%}%>
+  </script>
+  <script src="../underscore/tmp.js"></script>
+  <script>
+    var results = document.getElementById('container');
+    var users = [
+      { "name": "Byron", "url": "http://localhost" },
+      { "name": "Casper", "url": "http://localhost" },
+      { "name": "Frank", "url": "http://localhost" }
+    ]
+
+    results.innerHTML = tmp("user_tmpl", users);
+  </script>
+</body>
+
+</html>

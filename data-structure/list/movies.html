@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>movies</title>
+</head>
+
+<body>
+  <script src="./index.js"></script>
+  <script>
+    window.onload = function () {
+      const moviesStr = "肖申克的救赎 教父 十二怒汉 黑暗骑士 星球大战";
+      const moviesArr = moviesStr.split(" ");
+      const moviesList = new List();
+      const customersList = new List();
+      function Customer(name, movie) {
+        this.name = name;
+        this.movie = movie;
+      }
+      function checkout(name, movie) {
+        if (moviesList.contains(movie)) {
+          const c = new Customer(name, movie);
+          customersList.append(c);
+          moviesList.remove(movie);
+        } else {
+          console.log(`${movie} is not available`);
+        }
+      }
+      for (let i = 0; i < moviesArr.length; i++) {
+        moviesList.append(moviesArr[i]);
+      }
+      console.log(moviesList.listSize);
+      console.log(moviesList.toString());
+      checkout('zhimin', '肖申克的救赎');
+      console.log(moviesList.listSize);
+      console.log(moviesList.toString());
+      console.log(customersList.toString());
+    }
+  </script>
+</body>
+
+</html>

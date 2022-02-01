@@ -1,0 +1,42 @@
+<!--
+ * @Author: zhimin
+ * @Date: 2022-01-29 14:18:03
+ * @LastEditors: zhimin
+ * @LastEditTime: 2022-01-29 14:26:38
+ * @FilePath: \zhimin_underscore\data-structure\stacks\conversion.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script src="./index.js"></script>
+  <script>
+    window.onload = function () {
+      var s = new Stack();
+      function mulBase(num, base) {
+        do {
+          s.push(num % base);
+          num = Math.floor(num / base);
+        } while (num > 0);
+      }
+      function converted() {
+        var convertedStr = "";
+        while (s.length() > 0) {
+          convertedStr += s.pop();
+        }
+        return convertedStr;
+      }
+      mulBase(11, 2);
+      console.log(converted());
+    }
+  </script>
+</body>
+
+</html>

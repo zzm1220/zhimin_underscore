@@ -1,0 +1,28 @@
+<!--
+ * @Author: zhimin
+ * @Date: 2022-01-21 10:41:20
+ * @LastEditors: zhimin
+ * @LastEditTime: 2022-01-21 13:43:26
+ * @FilePath: \zhimin_underscore\doms\dom.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>dom</title>
+</head>
+
+<body>
+  <div class="foo">hello</div>
+  <script src="./mutation.js"></script>
+  <script>
+    ready('.foo', (element) => {
+      console.log(element)
+    })
+  </script>
+</body>
+
+</html>

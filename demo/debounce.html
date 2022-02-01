@@ -1,0 +1,49 @@
+<!--
+ * @Author: zhimin
+ * @Date: 2022-01-25 13:25:00
+ * @LastEditors: zhimin
+ * @LastEditTime: 2022-01-25 14:11:27
+ * @FilePath: \zhimin_underscore\demo\debounce.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div#container {
+      height: 200px;
+      line-height: 200px;
+      background-color: slateblue;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="container"></div>
+  <button id="cancelBtn">点击取消debounce</button>
+  <script src="../underscore/debounce.js"></script>
+  <script>
+    window.onload = function () {
+      var cnt = 1;
+      var container = document.getElementById('container'),
+        cancelBtn = document.getElementById('cancelBtn');
+      function getUserAction(e) {
+        console.log(this);
+        console.log(e);
+        container.innerHTML = cnt++;
+      }
+      var setUserAction = debounce(getUserAction, 1000, true);
+      container.addEventListener('mousemove', setUserAction, false);
+      cancelBtn.addEventListener('click', function () {
+        setUserAction.cancel();
+      }, false);
+    }
+  </script>
+</body>
+
+</html>

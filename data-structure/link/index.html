@@ -1,0 +1,39 @@
+<!--
+ * @Author: zhimin
+ * @Date: 2022-02-01 11:19:20
+ * @LastEditors: zhimin
+ * @LastEditTime: 2022-02-01 11:36:56
+ * @FilePath: \zhimin_underscore\data-structure\link\index.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script src="./cryclelink.js"></script>
+  <script>
+    window.onload = function () {
+      var cList = new CLink();
+      function survive(num) {
+        for (var i = 1; i <= num; i++) {
+          cList.init(i);
+        }
+      }
+      survive(41);
+      while (cList.count() > 2) {
+        cList.advance(3);
+        cList.remove(cList.currentNode.element);
+        // cList.display();
+      }
+      cList.display();
+    }
+  </script>
+</body>
+
+</html>
