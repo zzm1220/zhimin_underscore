@@ -1,0 +1,34 @@
+<!--
+ * @Author: zhimin
+ * @Date: 2022-02-10 09:56:06
+ * @LastEditors: zhimin
+ * @LastEditTime: 2022-02-10 09:59:25
+ * @FilePath: \zhimin_underscore\es6\proxy\index.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>proxy</title>
+</head>
+
+<body>
+  <script src="./dom.js"></script>
+  <script>
+    const el = dom.div({},
+      'hello, proxy',
+      dom.a({ href: 'zhimin.com' }, 'good'),
+      'i like js',
+      dom.ul({},
+        dom.li({}, 'the web'),
+        dom.li({}, 'the js')
+      )
+    );
+    document.body.appendChild(el);
+  </script>
+</body>
+
+</html>

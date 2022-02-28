@@ -1,0 +1,18 @@
+{
+  "name": "chinaiptv",
+  "version": "1.0.7",
+  "description": "",
+  "bin": {
+    "iptv": "./bin/index.js"
+  },
+  "main": "./bin/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "iptv-lib": "^1.1.0"
+  }
+}
